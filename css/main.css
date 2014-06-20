@@ -32,7 +32,7 @@ a {
 }
 
 .spacer {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .typekit-badge {
@@ -47,11 +47,11 @@ a {
   bottom: 0%;
   background-color: #fff;
 
-  -webkit-transition: opacity 0.2s linear;
-  -moz-transition: opacity 0.2s linear;
-  -ms-transition: opacity 0.2s linear;
-  -o-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -ms-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
 }
 
 .page#frontpage {
@@ -60,13 +60,13 @@ a {
   background-position: 60% 50%;
   color: #fff;
   height: 100%;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 
-  -webkit-transition: background-image 0.2s linear;
-  -moz-transition: background-image 0.2s linear;
-  -ms-transition: background-image 0.2s linear;
-  -o-transition: background-image 0.2s linear;
-  transition: background-image 0.2s linear;
+  -webkit-transition: background-image 0.2s ease-in;
+  -moz-transition: background-image 0.2s ease-in;
+  -ms-transition: background-image 0.2s ease-in;
+  -o-transition: background-image 0.2s ease-in;
+  transition: background-image 0.2s ease-in;
 }
 .scene-container {
   width: 90%;
@@ -93,7 +93,7 @@ a {
 
 #frontpage .social a:link, #frontpage .social a:visited {
   font-family: 'swan';
-  margin: 20px 0px 0px 10px;
+  margin: 10px 0px 0px 10px;
   font-size: 3em;
   border-bottom: none;
   float: right;
@@ -109,28 +109,41 @@ a {
   display: block;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .2);
 
   -webkit-animation: clearIn .7s;
   animation: clearIn .7s;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0; 
+    transform: perspective(200px) translate(0px, 10px) rotateX(-10deg);
+  }
+  to { 
+    opacity: 1;
+    transform: perspective(200px) translate(0px, 0px) rotateX(0deg);
+  }
 }
 @-webkit-keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0; 
+    -webkit-transform: perspective(200px) translate(0px, 10px) rotateX(-10deg);
+  }
+  to { 
+    opacity: 1;
+    -webkit-transform: perspective(200px) translate(0px, 0px) rotateX(0deg);
+  }
 }
 
+/* for background clear in */
 @keyframes clearIn {
   from { background: rgba(0, 0, 0, .1); }
-  to { background: rgba(0, 0, 0, .5); }
+  to { background: rgba(0, 0, 0, .2); }
 }
 @-webkit-keyframes clearIn {
   from { background: rgba(0, 0, 0, .1); }
-  to { background: rgba(0, 0, 0, .5); }
+  to { background: rgba(0, 0, 0, .2); }
 }
 
 #frontpage h1 {
@@ -141,36 +154,30 @@ a {
   position: absolute;
   top: 0%;
   left: 0%;
-  right: 0%;
 
   opacity: 0;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: perspective(200px) translate(0px, 10px) rotateX(-10deg);
+  -webkit-transform: perspective(200px) translate(0px, 10px) rotateX(-10deg);
 }
 #frontpage .heading.animate-in {
-  -webkit-animation: fadeIn .7s;
-  animation: fadeIn .7s;
-  -webkit-animation-delay: .5s;
-  animation-delay: .5s;
+  -webkit-animation: fadeIn .3s;
+  animation: fadeIn .3s;
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-#frontpage .heading-container {
-}
+
 #frontpage .heading a {
-  font-weight: 100;
+  font-weight: 300;
   border-bottom: 1px #fff dotted;
 }
 #frontpage h3 {
   margin: 0;
   text-transform: lowercase;
   font-weight: 1000;
-}
-
-.page#engineering {
-  background-color: #e7e7e7;
-}
-
-.page#things {
-  background-color: #fff;
 }
 
 footer.animate-in {
@@ -207,7 +214,7 @@ footer a:hover, footer a:active {
 
 @media(max-width:767px) {
   .scene-container {
-    top: 20%;
+    top: 10%;
   }
   footer ul li {
     display: block;
@@ -216,5 +223,5 @@ footer a:hover, footer a:active {
 }
 @media(min-width:768px){}
 @media(min-width:992px){}
-@media(min-width:1200px){}
+@media(min-width:1100px){}
 
