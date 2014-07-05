@@ -30,6 +30,7 @@ FrontpageManager.prototype.show = function(index) {
     });
   }
 
+  this.currentImg = item.bg;
   $('#frontpage').css('background-image', "url('" + item.bg + "')");
   $('#frontpage .action').html(item.action);
   this.map.splice(index, 1);
@@ -47,12 +48,9 @@ $(document).ready(function() {
   var mainBackground = new Image();
   $(mainBackground).load(function() {
     $('.page#loading').css('opacity', 0);
-
     $('.heading').addClass('animate-in');
     
-    // setup footer show
     if (isTouchDevice()) {
-
       // on mobile, show after small delay
       setTimeout(function() {
         $('footer').addClass('animate-in');
@@ -64,7 +62,6 @@ $(document).ready(function() {
       });
 
     } else {
-
       // on non-mobile, show when mouse moves
       $('body').one('mousemove', function() {
         setTimeout(function() {
@@ -83,7 +80,8 @@ $(document).ready(function() {
 
   });
 
-  mainBackground.src = fpMan.map[0].bg;
+  // preload first image
+  mainBackground.src = fpMan.currentImg;
 
   $('.tagline').click(function() {
     $('#frontpage .action').fadeIn(100);
