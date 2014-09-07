@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="Stephen Wan - Engineering &amp; Things" />
-        <title>Stephen Wan</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui"/>
-        <meta property="og:image" content="http://stephenwan.net/static/sand.jpg"/>
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/main.css">
-    </head>
-    <body>
-      <section class="page" id="loading">
-
-      </section>
-      <section class="page" id="frontpage">
-        <div class="filter">
-          <div class="scene-container">
-            <div class="scene-internal-container scene">
-              <div class="layer" data-depth="0.25">
-                <section class="heading">
-                  <h1>Stephen Wan <br class="visible-xs" /><a href="#" class="action" style="display: none;"></a></h1>
-                  <h3><a href="#" class="tagline">Engineering &amp; Things</a></h3>
-                </section>
-                <footer>
-                  <ul>
-                    <li><a href="http://twitter.com/stephencwan">@stephencwan</a></li>
-                    <li><a href="http://github.com/stephen">projects</a></li>
-                    <!--<li><a href="http://stephenwan.net/thoughts">thoughts</a></li>-->
-                    <li><a href="mailto:stephen@stephenwan.net">stephen@stephenwan.net</a></li>
-                  </ul>
-                </footer>
-              </div>
-            </div>
-          </div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Stephen Wan - Engineering &amp; Things" />
+    <title>Stephen Wan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui"/>
+    <meta property="og:image" content="http://stephenwan.net/static/sand.jpg"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script type="text/javascript" src="//use.typekit.net/zqs8xzq.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body class="stage">
+    <div class="page" id="hero">
+      <div class="pane" id="reveal"></div>
+      <div class="pane" id="background"></div>
+      <div class="pane" id="overlay">
+        <div class="pane-content">
+          <header>
+            <h1>Stephen Wan</h1>
+            <h3>Engineering &amp; Things</h3>
+          </header>
+          <footer>
+            <ul>
+              <li><a href="http://twitter.com/stephencwan">@stephencwan</a></li>
+              <li><a href="http://github.com/stephen">projects</a></li>
+              <!--<li><a href="http://stephenwan.net/thoughts">thoughts</a></li>-->
+              <li><a href="mailto:stephen@stephenwan.net">stephen@stephenwan.net</a></li>
+            </ul>
+          </footer>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="/js/spin.min.js"></script>
-      <script src="/js/main.js"></script>
-      <script type="text/javascript" src="//use.typekit.net/zqs8xzq.js"></script>
-      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-      <script src="/js/jquery.parallax.js"></script>
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script id="pane-background-template" type="text/template">
+      <div style="background-image: url('<%- src %>');"></div>
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/velocity/1.0.0/velocity.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-25136677-1', 'stephenwan.net');
-        ga('send', 'pageview');
-      </script>
-    </body>
+      ga('create', 'UA-25136677-1', 'stephenwan.net');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </html>
