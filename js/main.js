@@ -32,10 +32,32 @@ var preloader = new Image();
 preloader.src = slide.bg;
 
 // start animations on load
-$(preloader).on('load', function() {
+$(preloader).on('load', function(e) {
   $('.pane#background div:first,footer,header,.pane#reveal').addClass('animate-in');
 });
 
-$('a[href="#scraps"]').on('click', function() {
+
+var root = /firefox|trident/i.test(navigator.userAgent) ? document.documentElement : document.body
+var easeInOutCubic = function(t, b, c, d) {
+  if ((t/=d/2) < 1) return c/2*t*t*t + b
+  return c/2*((t-=2)*t*t + 2) + b
+}
+
+$('a[href="#scraps"]').on('click', function(e) {
   $('#scraps').removeClass('hidden');
+  var startTime
+      var startPos = root.scrollTop
+      var endPos = document.getElementById(/[^#]+$/.exec(this.href)[0]).getBoundingClientRect().top
+      var maxScroll = root.scrollHeight - window.innerHeight
+      var scrollEndValue = startPos + endPos < maxScroll ? endPos : maxScroll - startPos
+      var duration = 900
+      var scroll = function(timestamp) {
+        startTime = startTime || timestamp
+        var elapsed = timestamp - startTime
+        var progress = easeInOutCubic(elapsed, startPos, scrollEndValue, duration)
+        root.scrollTop = progress
+        elapsed < duration && requestAnimationFrame(scroll)
+      }
+      requestAnimationFrame(scroll)
+      e.preventDefault()
 });
