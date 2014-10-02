@@ -36,9 +36,6 @@ $(preloader).on('load', function() {
   $('.pane#background div:first,footer,header,.pane#reveal').addClass('animate-in');
 });
 
-
-
-
-
-
-
+$('a[href="#scraps"]').on('click', function() {
+  $('#scraps').removeClass('hidden');
+});

@@ -94,14 +94,13 @@ a {
 }
 
 .page {
-  min-height: 100%;
   color: #000;
-  overflow: hidden;
   position: relative;
 }
 
 .page#hero {
   height: 100%;
+  overflow: hidden;
 }
 
 /* hero */
@@ -174,6 +173,11 @@ a {
   bottom: 10%;
 
   header {
+
+    @media(max-width:767px) {
+      top: 20%;
+    }
+
     position: absolute;
     top: 40%;
 
@@ -249,6 +253,31 @@ a {
       animation-delay: .5s;
       -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
+    }
+  }
+}
+
+.page#scraps {
+
+  .pane {
+    position: absolute;
+    right: 10%;
+    left: 10%;
+    top: 5%;
+    margin: 30px 0px;
+  }
+
+  article {
+
+    padding: 1em 0px;
+
+    h3 {
+      text-transform: lowercase;
+    }
+
+    p {
+      max-width: 520px;
+      line-height: 200%;
     }
   }
 }
