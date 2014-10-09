@@ -45,6 +45,7 @@ var easeInOutCubic = function(t, b, c, d) {
 
 $('a[href="#scraps"]').on('click', function(e) {
   $('#scraps').removeClass('hidden');
+  $('#scraps article').addClass('animate-in');
   var startTime
       var startPos = root.scrollTop
       var endPos = document.getElementById(/[^#]+$/.exec(this.href)[0]).getBoundingClientRect().top
