@@ -33,7 +33,7 @@ preloader.src = slide.bg;
 
 // start animations on load
 $(preloader).on('load', function(e) {
-  $('.pane#background div:first,footer,header,.pane#reveal').addClass('animate-in');
+  $('.pane#background div:first,footer,header h1,header h3,.pane#reveal').addClass('animate-in');
 });
 
 

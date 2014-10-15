@@ -191,6 +191,8 @@ a {
       margin: 0;
       text-transform: lowercase;
       font-weight: 100;
+      -webkit-animation-delay: .5s;
+      animation-delay: .5s;
     }
   }
 
@@ -243,7 +245,7 @@ a {
     height: 100%;
   }
 
-  .pane-content header {
+  header h3, header h1 {
     opacity: 0;
 
     &.animate-in {
@@ -253,6 +255,13 @@ a {
       animation-delay: .5s;
       -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
+    }
+  }
+
+  header h3 {
+    &.animate-in {
+      -webkit-animation-delay: .6s;
+      animation-delay: 1s;
     }
   }
 }
