@@ -1,3 +1,61 @@
 ---
 layout: default
 ---
+
+
+    <div class="page" id="hero">
+      <div class="pane" id="reveal"></div>
+      <div class="pane" id="background"></div>
+      <div class="pane" id="overlay">
+        <div class="pane-content">
+          <header>
+            <h1>Stephen Wan</h1>
+            <h3>Engineering &amp; Things</h3>
+          </header>
+          <footer>
+            <ul>
+              <li><a href="http://twitter.com/stephencwan">@stephencwan</a></li>
+              <li><a href="http://github.com/stephen">projects</a></li>
+              <li><a href="https://medium.com/@stephencwan/">writing</a></li>
+              <li><a href="mailto:stephen@stephenwan.net">email</a></li>
+              <li class="hidden"><a class="scroll" href="#scraps">scraps</a></li>
+            </ul>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div class="page hidden" id="scraps">
+      <section class="pane">
+        <article class="hidden">
+          <h3>Curiosity</h3>
+          <p>
+            Curiosity is interesting, but not for its intrinsic value. Rather, it's a follow-through on curiosity that merits attention.
+          </p>
+        </article>
+        <article class="hidden">
+          <h3>Decisions</h3>
+          <p>
+            For a given decision, there's a finite amount of time for which it's useful to sit down and think. Beyond that point, the brain doesn't produce any additional useful, distinct outputs. Then, it only makes sense to do one of two things: seek further inputs, or execute on a choice.
+          </p>
+          <p>
+            Continued rumination produces nothing valuable.
+          </p>
+        </article>
+        <article class="hidden">
+          <h3>Love, over fear</h3>
+          <p>
+            Invest time with love, not fear. Fear inspires uninteresting outputs that are shallow, superficial. Love incites work that is notable; self-evident in attention, care, passion...
+          </p>
+        </article>
+        <article class="hidden">
+          <h3>Constraints</h3>
+          <p>
+            Constraints are necessary to create meaningful output (in products, intelligence, personal growth...).
+          </p>
+        </article>
+      </section>
+    </div>
+
+    <script id="pane-background-template" type="text/template">
+      <div style="background-image: url('<%- src %>');"></div>
+    </script>
