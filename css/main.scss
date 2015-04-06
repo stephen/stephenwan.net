@@ -305,7 +305,7 @@ a {
       -webkit-animation: slideUp .4s;
       animation: slideUp .4s;
 
-      @for $i from 1 through 3 {
+      @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
           -webkit-animation-delay: .2s * $i;
           animation-delay: .2s * $i;
@@ -325,6 +325,35 @@ a {
     p {
       max-width: 520px;
       line-height: 200%;
+    }
+  }
+}
+
+.dot {
+
+  width: 100px;
+  position: absolute;
+  right: 0px;
+  top: 40%;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  line-height: 0px;
+
+  .neuron {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 5px 5px 0px 0px;
+    padding: 0px;
+    opacity: .6;
+
+    &.active {
+      opacity: .9;
+    }
+    &.dead {
+      opacity: 0 !important;
     }
   }
 }

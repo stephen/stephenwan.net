@@ -47,18 +47,31 @@ $('a[href="#scraps"]').on('click', function(e) {
   $('#scraps').removeClass('hidden');
   $('#scraps article').addClass('animate-in');
   var startTime
-      var startPos = root.scrollTop
-      var endPos = document.getElementById(/[^#]+$/.exec(this.href)[0]).getBoundingClientRect().top
-      var maxScroll = root.scrollHeight - window.innerHeight
-      var scrollEndValue = startPos + endPos < maxScroll ? endPos : maxScroll - startPos
-      var duration = 900
-      var scroll = function(timestamp) {
-        startTime = startTime || timestamp
-        var elapsed = timestamp - startTime
-        var progress = easeInOutCubic(elapsed, startPos, scrollEndValue, duration)
-        root.scrollTop = progress
-        elapsed < duration && requestAnimationFrame(scroll)
-      }
-      requestAnimationFrame(scroll)
-      e.preventDefault()
+  var startPos = root.scrollTop
+  var endPos = document.getElementById(/[^#]+$/.exec(this.href)[0]).getBoundingClientRect().top
+  var maxScroll = root.scrollHeight - window.innerHeight
+  var scrollEndValue = startPos + endPos < maxScroll ? endPos : maxScroll - startPos
+  var duration = 900
+  var scroll = function(timestamp) {
+    startTime = startTime || timestamp
+    var elapsed = timestamp - startTime
+    var progress = easeInOutCubic(elapsed, startPos, scrollEndValue, duration)
+    root.scrollTop = progress
+    elapsed < duration && requestAnimationFrame(scroll)
+  }
+  requestAnimationFrame(scroll)
+  e.preventDefault()
 });
+
+var $dotSpace = $('.dot'), spaceSize = 36;
+for (var i = 0; i < spaceSize; i++) {
+  var neuronHtml = '<div class="neuron" data-id="' + i + '""></div>';
+  $dotSpace.append(neuronHtml);
+}
+
+setInterval(function() {
+  var neuronId = Math.floor(Math.random() * spaceSize);
+  var alive = Math.floor(Math.random() * 100);
+  var $neuron = $('.dot .neuron[data-id="' + neuronId + '"]');
+  $neuron.toggleClass(alive ? 'active' : 'dead');
+}, 10);
